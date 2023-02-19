@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: sampleapp
-        image: replicity/gitops-sampleapp:latest
+        image: replicity/gitops-sampleapp:daf78924f815cf9d4d920d4fa1ed23a2aa188a25
         ports:
           - containerPort: 80
