@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prd-sampleapp
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc # Argo CDがインストールされているk8s自身
+  source: # デプロイするマニフェスト
+    path: manifest/sampleapp/overlay/prd
+    repoURL:  https://github.com/replu/gitops-manifest # マニフェストリポジトリ
+    targetRevision: prd # 本番環境用ブランチ
